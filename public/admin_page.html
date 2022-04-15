@@ -35,15 +35,54 @@
                     </ul>
                 </nav>
                 <a href="cart.html"><img src="images/cart.png" width="30px" height="30px" /></a>
+                <a class="btn" href="#" id="LogOut">Cerrar Sesión</a>
                 <img src="images/menu.png" class="menu-icon" onclick="menutoggle()" />
             </div>
     </header>
 
     <!-- Account Page -->
     <div class="account-page">
-        <div class="container">
+        <div class="">
             <div class="row">
-
+                <div class="col-3">
+                    <h4>Datos de empresa</h4>
+                    <div class="row">
+                        <div class="col-2">
+                            <form id="DataForm">
+                                <div>
+                                    <label for="Nombre">Nombre</label>
+                                    <input type="text" placeholder="" id="Nombre">
+                                </div>
+                                <div>
+                                    <label for="Apellido">Apellido</label>
+                                    <input type="text" placeholder="" id="Apellido">
+                                </div>
+                                <div>
+                                    <label for="Empresa">Empresa</label>
+                                    <input type="text" placeholder="" id="Empresa">
+                                </div>
+                                <button type="submit" class="btn">Modificar</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <h4>Registrar Usuarios</h4>
+                    <form id="RegForm">
+                        <div>
+                            <label for="reg_mail">E-mail</label>
+                            <input type="email" placeholder="E-mail" id="reg_mail">
+                        </div>
+                        <div>
+                            <label for="reg_pass">Contraseña</label>
+                            <input type="password" placeholder="Password" id="reg_pass">
+                        </div>
+                        <button type="submit" class="btn">Modificar</button>
+                    </form>
+                </div>
+                <div class="col-3">
+                    <h4>Usuarios</h4>
+                </div>
             </div>
         </div>
     </div>
@@ -63,6 +102,11 @@
     <!--FireBase-->
     <script type="module" src="./js/firebase_config.js"></script>
     <script type="module" src="./js/fire_analytics.js"></script>
+    <script type="module" src="./js/fire_auth_observer.js"></script>
+    <script type="module" src="./js/fire_auth_admin.js"></script>
+
+
+
 
 
 </body>
