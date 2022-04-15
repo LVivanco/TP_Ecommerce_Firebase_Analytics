@@ -2,27 +2,17 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ecommerce | Ecommerce Website Project</title>
-
-    <link rel="shortcut icon" href="./src/img/logo.png" type="image/x-icon">
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Products | RedStore</title>
     <link rel="stylesheet" href="./styles/style.css" />
-
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet" />
-
-
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
-    <header class="header">
+    <header>
         <div class="container">
             <div class="navbar">
                 <div class="logo">
@@ -38,100 +28,24 @@
                 <a href="cart.html"><img src="images/cart.png" width="30px" height="30px" /></a>
                 <img src="images/menu.png" class="menu-icon" onclick="menutoggle()" />
             </div>
-            <div class="row">
-                <div class="col-2">
-                    <h1>
-                        Donde encontraras lo mejor en tecnologia! <br />
-                    </h1>
-                    <a href="./products.html" class="btn">Ver Productos</a>
-                </div>
-                <div class="col-3">
-                    <img src="./src/img/foto_tecnologia.png" />
-                </div>
-            </div>
-        </div>
     </header>
 
-    <!-- Feadtued Categories -->
-
-    <div class="categories">
-        <div class="small-container">
-            <h2 class="title">Categorias</h2>
-            <div class="row">
-                <div class="col-3">
-                    <img src="images/category-1.jpg" />
-                    <h3 class="mx-default">Categoria 1</h3>
-                </div>
-                <div class="col-3">
-                    <img src="images/category-2.jpg" />
-                    <h3>Categoria 2</h3>
-                </div>
-                <div class="col-3">
-                    <img src="images/category-3.jpg" />
-                    <h3>Categoria 3</h3>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Featured Products -->
+    <!-- All Products -->
 
     <div class="small-container">
-        <h2 class="title">Featured Products</h2>
-        <div class="row">
-            <div class="col-4">
-                <a href="product_details.html"><img src="images/product-1.jpg" /></a>
-                <h4>Red Printed T-Shirt</h4>
-                <div class="rating">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star-o"></i>
-                </div>
-                <p>$50.00</p>
-            </div>
-            <div class="col-4">
-                <img src="images/product-2.jpg" />
-                <h4>Red Printed T-Shirt</h4>
-                <div class="rating">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star-o"></i>
-                </div>
-                <p>$50.00</p>
-            </div>
-            <div class="col-4">
-                <img src="images/product-3.jpg" />
-                <h4>Red Printed T-Shirt</h4>
-                <div class="rating">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star-o"></i>
-                </div>
-                <p>$50.00</p>
-            </div>
-            <div class="col-4">
-                <img src="images/product-4.jpg" />
-                <h4>Red Printed T-Shirt</h4>
-                <div class="rating">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star-o"></i>
-                </div>
-                <p>$50.00</p>
-            </div>
+        <div class="row row-2">
+            <h2>All Products</h2>
+            <select>
+                <option>Default Sort</option>
+                <option>Sort By Price</option>
+                <option>Sort By Popularity</option>
+                <option>Sort By Rating</option>
+                <option>Sort By Sale</option>
+            </select>
         </div>
-        <h2 class="title">Latest Products</h2>
         <div class="row">
             <div class="col-4">
-                <img src="images/product-5.jpg" />
+                <a href="product_details.html"><img src="images/product-1.jpg"></a>
                 <h4>Red Printed T-Shirt</h4>
                 <div class="rating">
                     <i class="fa fa-star"></i>
@@ -143,7 +57,7 @@
                 <p>$50.00</p>
             </div>
             <div class="col-4">
-                <img src="images/product-6.jpg" />
+                <img src="images/product-2.jpg">
                 <h4>Red Printed T-Shirt</h4>
                 <div class="rating">
                     <i class="fa fa-star"></i>
@@ -155,7 +69,7 @@
                 <p>$50.00</p>
             </div>
             <div class="col-4">
-                <img src="images/product-7.jpg" />
+                <img src="images/product-3.jpg">
                 <h4>Red Printed T-Shirt</h4>
                 <div class="rating">
                     <i class="fa fa-star"></i>
@@ -167,7 +81,7 @@
                 <p>$50.00</p>
             </div>
             <div class="col-4">
-                <img src="images/product-8.jpg" />
+                <img src="images/product-4.jpg">
                 <h4>Red Printed T-Shirt</h4>
                 <div class="rating">
                     <i class="fa fa-star"></i>
@@ -181,7 +95,7 @@
         </div>
         <div class="row">
             <div class="col-4">
-                <img src="images/product-9.jpg" />
+                <img src="images/product-5.jpg">
                 <h4>Red Printed T-Shirt</h4>
                 <div class="rating">
                     <i class="fa fa-star"></i>
@@ -193,7 +107,7 @@
                 <p>$50.00</p>
             </div>
             <div class="col-4">
-                <img src="images/product-10.jpg" />
+                <img src="images/product-6.jpg">
                 <h4>Red Printed T-Shirt</h4>
                 <div class="rating">
                     <i class="fa fa-star"></i>
@@ -205,7 +119,7 @@
                 <p>$50.00</p>
             </div>
             <div class="col-4">
-                <img src="images/product-11.jpg" />
+                <img src="images/product-7.jpg">
                 <h4>Red Printed T-Shirt</h4>
                 <div class="rating">
                     <i class="fa fa-star"></i>
@@ -217,7 +131,7 @@
                 <p>$50.00</p>
             </div>
             <div class="col-4">
-                <img src="images/product-12.jpg" />
+                <img src="images/product-8.jpg">
                 <h4>Red Printed T-Shirt</h4>
                 <div class="rating">
                     <i class="fa fa-star"></i>
@@ -228,6 +142,63 @@
                 </div>
                 <p>$50.00</p>
             </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <img src="images/product-9.jpg">
+                <h4>Red Printed T-Shirt</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <p>$50.00</p>
+            </div>
+            <div class="col-4">
+                <img src="images/product-10.jpg">
+                <h4>Red Printed T-Shirt</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <p>$50.00</p>
+            </div>
+            <div class="col-4">
+                <img src="images/product-11.jpg">
+                <h4>Red Printed T-Shirt</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <p>$50.00</p>
+            </div>
+            <div class="col-4">
+                <img src="images/product-12.jpg">
+                <h4>Red Printed T-Shirt</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <p>$50.00</p>
+            </div>
+        </div>
+        <div class="page-btn">
+            <span>1</span>
+            <span>2</span>
+            <span>3</span>
+            <span>4</span>
+            <span>&#8594;</span>
         </div>
     </div>
 
@@ -240,10 +211,9 @@
     </div>
 
     <!-- javascript -->
+
     <script src="./js/tmpl_NavBarItems.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-    </script>
+
     <!--FireBase-->
     <script src="./js/firebase_config.js"></script>
     <script src="./js/fire_analytics.js"></script>

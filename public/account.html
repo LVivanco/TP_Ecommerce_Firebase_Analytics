@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Products | RedStore</title>
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <a href="index.html"><img src="./src/img/logo.png" alt="logo" width="125px" /></a>
+                </div>
+                <nav>
+                    <ul id="MenuItems">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="products.html">Productos</a></li>
+                        <li><a href="">Sobre Nosotros</a></li>
+                    </ul>
+                </nav>
+                <a href="cart.html"><img src="images/cart.png" width="30px" height="30px" /></a>
+                <img src="images/menu.png" class="menu-icon" onclick="menutoggle()" />
+            </div>
+    </header>
+
+    <!-- Account Page -->
+    <div class="account-page">
+        <div class="container">
+            <div class="row">
+                <div class="col-2">
+                    <div class="form-container">
+                        <div class="form-btn">
+                            <span onclick="login()">Login</span>
+                            <span onclick="register()">Registrase</span>
+                            <hr id="Indicator">
+                        </div>
+
+                        <form id="LoginForm">
+                            <div>
+                                <label for="reg_mail">E-mail</label>
+                                <input type="email" placeholder="E-mail" id="reg_mail">
+                            </div>
+                            <div>
+                                <label for="reg_pass">Contraseña</label>
+                                <input type="password" placeholder="Password" id="reg_pass">
+                            </div>
+                            <button type="submit" class="btn">Entrar</button>
+                            <a href="">Olvidaste tu contraseña</a>
+                        </form>
+
+                        <form id="RegForm">
+                            <div>
+                                <label for="reg_mail">E-mail</label>
+                                <input type="email" placeholder="E-mail" id="reg_mail">
+                            </div>
+                            <div>
+                                <label for="reg_pass">Contraseña</label>
+                                <input type="password" placeholder="Password" id="reg_pass">
+                            </div>
+                            <div>
+                                <label for="reg_token">Token</label>
+                                <input type="text" placeholder="Token" id="reg_token">
+                            </div>
+                            <button type="submit" class="btn">Registrar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="container">
+            <hr>
+            <p class="copyright">Copyright 2020</p>
+        </div>
+    </div>
+
+    <!-- javascript -->
+    <script src="./js/tmpl_NavBarItems.js"></script>
+
+    <!-- Toggle Form -->
+    <script src="./js/tmpl_FormToggle.js"></script>
+
+    <!--FireBase-->
+    <script src="./js/firebase_config.js"></script>
+    <script src="./js/fire_analytics.js"></script>
+
+
+</body>
+
+</html>
