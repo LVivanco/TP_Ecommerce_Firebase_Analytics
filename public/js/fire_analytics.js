@@ -6,9 +6,9 @@ import {
     logEvent
 } from 'https://www.gstatic.com/firebasejs/9.6.9/firebase-analytics.js';
 
+const title = document.title;
 const analytics = getAnalytics(app);
-var path = window.location.pathname;
-var eventName = 'view' + path.replace(/\//g, '_');
+var eventName = 'visit' + title;
 
 logEvent(analytics, eventName)
 
