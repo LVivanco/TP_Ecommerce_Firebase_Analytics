@@ -12,9 +12,7 @@ import {
     setDoc,
     collection
 } from 'https://www.gstatic.com/firebasejs/9.6.9/firebase-firestore.js';
-import {
-    cr_uid
-} from './fire_auth_observer.js';
+
 
 
 const Token = 'TP2ADMIN';
