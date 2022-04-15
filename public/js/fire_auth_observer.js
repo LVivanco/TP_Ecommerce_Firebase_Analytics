@@ -35,8 +35,33 @@ onAuthStateChanged(auth, (user) => {
     if (user) {
         console.log(user.uid);
         var uid = user.uid;
-        console.log(auth.currentUser);
+        var datos = getData(uid);
+        datos.then(data => {
+            viewAdminEnable(data.Rol);
+        }).catch(err => {
+            console.log(err)
+        });
+        console.log(datos)
     } else {
         console.log('No user');
     }
 });
+
+async function getData(uid) {
+    const docRef = doc(db, "Users", uid);
+    const docSnap = await getDoc(docRef);
+
+    return docSnap.data();
+}
+
+async function viewAdminEnable(rol) {
+    const viewAdmin = document.getElementById('viewAdmin');
+
+    if (viewAdmin != null) {
+        if (rol === "Administrador") {
+            viewAdmin.style.display = "block";
+        } else {
+            viewAdmin.style.display = "none";
+        }
+    }
+}

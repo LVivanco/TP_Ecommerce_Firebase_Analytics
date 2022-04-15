@@ -21,7 +21,7 @@ const db = getFirestore(app);
 
 const loginForm = document.getElementById('LoginForm');
 const registerForm = document.getElementById('RegForm');
-const p_uid = document.getElementById('p_uid');
+
 
 const uid = "";
 
@@ -71,5 +71,3 @@ registerForm.addEventListener('submit', (e) => {
         alert('Token Invalido');
     }
 });
-
-console.log(p_uid.textContent);
