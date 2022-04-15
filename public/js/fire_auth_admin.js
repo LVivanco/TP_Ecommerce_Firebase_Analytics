@@ -3,6 +3,7 @@ import {
 } from './firebase_config.js';
 import {
     getAuth,
+    onAuthStateChanged
 } from 'https://www.gstatic.com/firebasejs/9.6.9/firebase-auth.js';
 import {
     getFirestore,
@@ -12,7 +13,6 @@ import {
     setDoc,
     collection
 } from 'https://www.gstatic.com/firebasejs/9.6.9/firebase-firestore.js';
-
 
 
 const Token = 'TP2ADMIN';
@@ -30,4 +30,4 @@ logOut.addEventListener('click', (e) => {
     });
 });
 
-console.log(auth.currentUser.uid);
+console.log(auth.currentUser)
