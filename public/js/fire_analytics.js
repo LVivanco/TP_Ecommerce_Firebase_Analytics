@@ -10,6 +10,9 @@ const analytics = getAnalytics(app);
 var path = window.location.pathname;
 var eventName = 'view' + path.replace(/\//g, '_');
 
-logEvent(analytics, eventName).then(() => {
-    console.log("Event logged" + eventName)
+logEvent(analytics, eventName)
+
+logEvent(analytics, 'select_content', {
+    content_type: 'link',
+    item_id: window.location.href
 });
