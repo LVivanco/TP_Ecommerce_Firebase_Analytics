@@ -6,8 +6,8 @@ import {
     logEvent
 } from "firebase/analytics";
 
-
 const analytics = getAnalytics(app);
 var path = window.location.pathname;
+var eventName = 'view' + path.replace(/\//g, '_');
 
-logEvent(analytics, path)
+logEvent(analytics, eventName)
