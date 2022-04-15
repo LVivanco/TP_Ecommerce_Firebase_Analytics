@@ -15,7 +15,7 @@ import {
 } from 'https://www.gstatic.com/firebasejs/9.6.9/firebase-firestore.js';
 
 
-const p_uid = document.getElementById('p_uid');
+const idWelcome = document.getElementById('idWelcome');
 const logOut = document.getElementById('LogOut');
 const db = getFirestore(app);
 const auth = getAuth();
@@ -38,6 +38,7 @@ onAuthStateChanged(auth, (user) => {
         var datos = getData(uid);
         datos.then(data => {
             viewAdminEnable(data.Rol);
+            idWelcome.innerHTML = `Bienvenido ${data.Correo}  - ${data.Rol}`;
         }).catch(err => {
             console.log(err)
         });
