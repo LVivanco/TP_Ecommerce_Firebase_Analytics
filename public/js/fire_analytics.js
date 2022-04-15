@@ -1,13 +1,15 @@
 import {
     app
-} from "firabe_config";
+} from './firebase_config.js';
 import {
     getAnalytics,
     logEvent
-} from "firebase/analytics";
+} from 'https://www.gstatic.com/firebasejs/9.6.9/firebase-analytics.js';
 
 const analytics = getAnalytics(app);
 var path = window.location.pathname;
 var eventName = 'view' + path.replace(/\//g, '_');
 
-logEvent(analytics, eventName)
+logEvent(analytics, eventName).then(() => {
+    console.log("Event logged" + eventName)
+});
