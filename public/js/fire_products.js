@@ -62,6 +62,12 @@ function anadirProductos(products) {
 var random_sort_products = [];
 var top3_productos = [];
 
+function selct_child_tag(tag) {
+    var child_tag = document.getElementsByTagName(tag);
+    return child_tag;
+}
+
+
 getProducts().then(() => {
     random_sort_products = ar_productos.sort(() => Math.random() - 0.5);
     top3_productos = random_sort_products.slice(0, 3);
@@ -71,5 +77,20 @@ getProducts().then(() => {
 
     if (idTodosProductos != null) {
         anadirProductos(random_sort_products);
+    }
+
+    for (let i = 0; i < selct_child_tag('a').length; i++) {
+        //console.log(selct_child_tag('a')[i]);
+        if (selct_child_tag('a')[i].id.includes("PR")) {
+            //console.log("este si");
+
+            selct_child_tag('a')[i].addEventListener('click', function (ev) {
+                ev.preventDefault();
+                var id_producto = this.id;
+                console.log(id_producto);
+                window.localStorage.setItem('id_producto', id_producto);
+                window.location.href = "product_details.html";
+            });
+        }
     }
 });
