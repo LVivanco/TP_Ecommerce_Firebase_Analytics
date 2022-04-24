@@ -6,8 +6,13 @@ import {
     collection,
     getDocs
 } from 'https://www.gstatic.com/firebasejs/9.6.9/firebase-firestore.js';
+import {
+    getAnalytics,
+    logEvent
+} from 'https://www.gstatic.com/firebasejs/9.6.9/firebase-analytics.js';
 
 const db = getFirestore(app);
+const analytics = getAnalytics(app);
 
 const idProductosPopulares = document.getElementById('idProductosPopulares');
 const idTodosProductos = document.getElementById('idTodosProductos');
@@ -86,7 +91,11 @@ getProducts().then(() => {
             selct_child_tag('a')[i].addEventListener('click', function (ev) {
                 ev.preventDefault();
                 var id_producto = this.id;
-                console.log(id_producto);
+
+                logEvent(analytics, 'product_select', {
+                    Produc_id: id_producto,
+                    Product_id_previus: window.localStorage.getItem('id_producto')
+                });
                 window.localStorage.setItem('id_producto', id_producto);
                 window.location.href = "product_details.html";
             });
