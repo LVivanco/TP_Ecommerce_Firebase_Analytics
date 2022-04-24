@@ -33,7 +33,7 @@ function crearProducto(product) {
     <img src="${product.src}"/>
     <p style="display: none" id="idProductCode"> CODE: ${product.id}</p></a>
     <h4>${product.Nombre}</h4>
-    <p> S/. ${Math.round(Math.random() * 100)} .00</p>
+    <p> S/. ${Math.round(Math.random() * 100)}.00</p>
     </div>`;
     return Producto_HTML;
 }
@@ -70,7 +70,7 @@ function selct_child_tag(tag) {
 
 getProducts().then(() => {
     random_sort_products = ar_productos.sort(() => Math.random() - 0.5);
-    top3_productos = random_sort_products.slice(0, 3);
+    top3_productos = random_sort_products.slice(0, 4);
     if (idProductosPopulares != null) {
         anadirProductos(top3_productos);
     }
@@ -83,7 +83,6 @@ getProducts().then(() => {
         //console.log(selct_child_tag('a')[i]);
         if (selct_child_tag('a')[i].id.includes("PR")) {
             //console.log("este si");
-
             selct_child_tag('a')[i].addEventListener('click', function (ev) {
                 ev.preventDefault();
                 var id_producto = this.id;
