@@ -50,7 +50,14 @@ getProducts().then(() => {
         const idProductoImg = document.getElementById('idProductoImg');
         const idAddCart = document.getElementById('idAddCart');
 
-        idAddCart.href = "about.html";
+        idAddCart.addEventListener('click', (ev) => {
+            ev.preventDefault();
+            logEvent(analytics, 'product_select_cart', {
+                Product_id_cart: window.localStorage.getItem('id_producto')
+            });
+            window.location.href = "about.html";
+        });
+
         //console.log(idProdcutoDetail);
         //console.log(idProductoImg);
     }
