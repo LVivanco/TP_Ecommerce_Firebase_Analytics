@@ -23,7 +23,7 @@ const loginForm = document.getElementById('LoginForm');
 const registerForm = document.getElementById('RegForm');
 
 
-const uid = "";
+var uid = "";
 
 loginForm.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -48,7 +48,9 @@ registerForm.addEventListener('submit', (e) => {
     if (tkn === Token) {
         createUserWithEmailAndPassword(auth, email, password).then(cred => {
             console.log(cred.user.uid);
+
             uid = cred.user.uid;
+
             const user = {
                 Correo: email,
                 Contrasena: password,
@@ -57,12 +59,22 @@ registerForm.addEventListener('submit', (e) => {
                 Apellido: "",
                 Empresa: Token,
             };
-            const uid = cred.user.uid;
+
+
+
             setDoc(doc(db, 'Users', uid), user).then(() => {
-                window.location.href = './admin_page.html'
+
+                if (confirm("Usuario regsitrado")) {
+                    window.location.href = './admin_page.html'
+                } else {
+                    window.location.href = './admin_page.html'
+                }
+
             }).catch(err => {
                 console.log(err)
             });
+
+
 
         }).catch(err => {
             console.log(err)

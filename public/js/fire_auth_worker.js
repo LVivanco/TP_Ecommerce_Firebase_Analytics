@@ -11,13 +11,15 @@ import {
     doc,
     setDoc,
     collection,
-    addDoc
+    getDocs
 } from 'https://www.gstatic.com/firebasejs/9.6.9/firebase-firestore.js';
 
 
 const auth = getAuth();
 const db = getFirestore(app);
 const RegColaboradorForm = document.getElementById('RegColaboradorForm');
+
+var empresa = "";
 
 RegColaboradorForm.addEventListener('submit', (e) => {
     e.preventDefault();

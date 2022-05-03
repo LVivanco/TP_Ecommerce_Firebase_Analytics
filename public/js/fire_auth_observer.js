@@ -17,6 +17,11 @@ import {
 
 const idWelcome = document.getElementById('idWelcome');
 const logOut = document.getElementById('LogOut');
+const idFrameDataStudio = document.getElementById('idFrameDataStudio');
+
+const idEmpresaForm = document.getElementById('idEmpresaForm');
+const idLblEmpresa = document.getElementById('idLblEmpresa');
+
 const db = getFirestore(app);
 const auth = getAuth();
 
@@ -37,14 +42,23 @@ onAuthStateChanged(auth, (user) => {
         var uid = user.uid;
         var datos = getData(uid);
         datos.then(data => {
+
+            idWelcome.innerHTML = `Bienvenido ${data.Correo}  - ${data.Rol} - para la empresa ${data.Empresa}`;
+            if (idLblEmpresa != null) {
+                idLblEmpresa.value = `${data.Empresa}`;
+            }
             viewAdminEnable(data.Rol);
-            idWelcome.innerHTML = `Bienvenido ${data.Correo}  - ${data.Rol}`;
+
         }).catch(err => {
             console.log(err)
         });
         console.log(datos)
     } else {
-        console.log('No user');
+
+        if (window.location.href.includes('admin_page.html')) {
+            alert("No hay sesión iniciada");
+            window.location.href = "account.html";
+        }
     }
 });
 
@@ -56,13 +70,21 @@ async function getData(uid) {
 }
 
 async function viewAdminEnable(rol) {
+
     const viewAdmin = document.getElementById('viewAdmin');
 
     if (viewAdmin != null) {
         if (rol === "Administrador") {
             viewAdmin.style.display = "block";
+            if (idFrameDataStudio != null) {
+                idFrameDataStudio.style.display = "block";
+            }
         } else {
+            if (idFrameDataStudio != null) {
+                idFrameDataStudio.style.display = "block";
+            }
             viewAdmin.style.display = "none";
         }
     }
+
 }
